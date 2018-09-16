@@ -10,16 +10,16 @@ import time
 driver = webdriver.Chrome()
 
 # Go to link ----- Enter your own url if you want to modify
-driver.get("https://my.uic.edu/Shibboleth.sso/Login?target=https://my.uic.edu/uPortal/Login")
+driver.get("Link here")
 
 # wait for load
 driver.implicitly_wait(10)
 
 # Select radio button
-radio = driver.find_elements_by_id("https://shibboleth.uic.edu/shibboleth")[0].click()
+radio = driver.find_elements_by_id("the_link")[0].click()
 driver.find_element_by_name("Select").click()
 
-driver.find_element_by_name("UserID").send_keys("your user name")
+driver.find_element_by_name("UserID").send_keys("your_id")
 driver.find_element_by_name("password").send_keys("password")
 driver.find_element_by_id("disable-on-click").click()
 
@@ -29,5 +29,27 @@ driver.implicitly_wait(5)
 
 # switch to new tab
 driver.switch_to.window(driver.window_handles[1])
-driver.find_element_by_id("keyword_in_id").send_keys("123")
+
+# check if it goes to next tab
+# driver.find_element_by_id("keyword_in_id").send_keys("123")
+
+driver.find_element_by_link_text("Add/Drop Classes").click()
+driver.find_element_by_link_text("I Agree to the Above Statement").click()
+
+
+driver.find_element_by_xpath('//input[@type="submit" and @value="Submit"]').click()
+driver.find_element_by_xpath('//input[@type="submit" and @value="Class Search"]').click()
+driver.find_element_by_xpath('//option[@value="CS"]').click()
+driver.implicitly_wait(2)
+driver.find_element_by_xpath('//input[@type="submit" and @value="Advanced Search"]').click()
+driver.find_element_by_xpath('//option[@value="CS"]').click()
+driver.implicitly_wait(2)
+
+# edit the required course as needed
+driver.find_element_by_id("crse_id").send_keys("514")
+driver.find_element_by_xpath('//input[@type="submit" and @value="Section Search"]').click()
+
+
+
+
 
