@@ -19,8 +19,8 @@ driver.implicitly_wait(10)
 radio = driver.find_elements_by_id("the_link")[0].click()
 driver.find_element_by_name("Select").click()
 
-driver.find_element_by_name("UserID").send_keys("your_id")
-driver.find_element_by_name("password").send_keys("password")
+driver.find_element_by_name("user").send_keys("your_id")
+driver.find_element_by_name("pass").send_keys("password")
 driver.find_element_by_id("disable-on-click").click()
 
 driver.implicitly_wait(10)
