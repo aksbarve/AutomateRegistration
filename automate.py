@@ -39,14 +39,14 @@ driver.find_element_by_link_text("I Agree to the Above Statement").click()
 
 driver.find_element_by_xpath('//input[@type="submit" and @value="Submit"]').click()
 driver.find_element_by_xpath('//input[@type="submit" and @value="Class Search"]').click()
-driver.find_element_by_xpath('//option[@value="CS"]').click()
+driver.find_element_by_xpath('//option[@value="Your major"]').click()
 driver.implicitly_wait(2)
 driver.find_element_by_xpath('//input[@type="submit" and @value="Advanced Search"]').click()
-driver.find_element_by_xpath('//option[@value="CS"]').click()
+driver.find_element_by_xpath('//option[@value="your major"]').click()
 driver.implicitly_wait(2)
 
 # edit the required course as needed
-driver.find_element_by_id("crse_id").send_keys("514")
+driver.find_element_by_id("crse_id").send_keys("your crn number")
 driver.find_element_by_xpath('//input[@type="submit" and @value="Section Search"]').click()
 
 
